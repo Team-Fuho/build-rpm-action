@@ -47,7 +47,7 @@ outputs:
     description: 'File name of resulting .rpm debuginfo file.'
 runs:
   using: 'docker'
-  image: 'docker://team-fuho/tfh-rpm-action:2.5.2'
+  image: 'docker://team-fuho/tfh-rpm-action:master'
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
 # TODO: update branding if you want.

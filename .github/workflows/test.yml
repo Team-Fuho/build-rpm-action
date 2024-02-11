@@ -55,7 +55,7 @@ jobs:
           echo -e "echo hello2" > .rpmpkg/usr/bin/testbin2
           echo -e "a=1" > .rpmpkg/usr/lib/testbin/testbin.conf
           chmod +x .rpmpkg/usr/bin/*
-      - uses: team-fuho/tfh-rpm-action@v2.5.2
+      - uses: team-fuho/tfh-rpm-action@vmaster
         with:
           summary: 'testbin is a test script'
           package: testbin
