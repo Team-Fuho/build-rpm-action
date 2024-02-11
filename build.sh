@@ -3,6 +3,6 @@
 set -eu
 
 version=$1
-tag="jiro4989/build-rpm-action:$version"
+tag="team-fuho/build-rpm-action:latest"
 docker build --no-cache -t "$tag" .
 docker push "$tag"

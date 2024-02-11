@@ -24,6 +24,7 @@ jobs:
           echo -e "a=1" > .rpmpkg/usr/lib/testbin/testbin.conf
           chmod +x .rpmpkg/usr/bin/*
           docker image ls
+          docker search tfh-rpm-action
       - uses: ./
         with:
           summary: 'testbin is a test script'
@@ -56,7 +57,7 @@ jobs:
           echo -e "echo hello2" > .rpmpkg/usr/bin/testbin2
           echo -e "a=1" > .rpmpkg/usr/lib/testbin/testbin.conf
           chmod +x .rpmpkg/usr/bin/*
-      - uses: team-fuho/tfh-rpm-action@vmaster
+      - uses: team-fuho/tfh-rpm-action@master
         with:
           summary: 'testbin is a test script'
           package: testbin
