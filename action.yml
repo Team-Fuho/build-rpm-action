@@ -1,6 +1,6 @@
 name: 'tfh-rpm-action'
 description: 'Build rpm package.'
-author: 'Team-Fuho'
+author: 'team-fuho'
 inputs:
   summary:
     description: 'Package summary.'
@@ -47,7 +47,7 @@ outputs:
     description: 'File name of resulting .rpm debuginfo file.'
 runs:
   using: 'docker'
-  image: 'docker://Team-Fuho/tfh-rpm-action:2.5.2'
+  image: 'docker://team-fuho/tfh-rpm-action:2.5.2'
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
 # TODO: update branding if you want.
