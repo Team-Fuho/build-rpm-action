@@ -56,7 +56,6 @@ for f in *.rpm; do
   # exclude debuginfo file
   line_count="$(echo "$f" | grep -Eoc "^${INPUT_PACKAGE}-debuginfo-")"
   if [ "$line_count" -ne 0 ]; then
-    RPM_DEBUGINFO_FILE="$f"
     continue
   fi
   RPM_FILE="$f"
@@ -65,4 +64,3 @@ done
 set -e
 
 echo "file_name=$RPM_FILE" >> "${GITHUB_OUTPUT}"
-echo "debuginfo_file_name=$RPM_DEBUGINFO_FILE" >> "${GITHUB_OUTPUT}"
