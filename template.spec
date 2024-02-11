@@ -16,12 +16,12 @@ BuildArch: {{ARCH}}
 %description
 {{DESC}}
 
+%global debug_package %{nil}
+
 %prep
 rm -rf $RPM_BUILD_ROOT
 
-%setup -n %{name}
-
-%build
+%autosetup
 
 %install
 {{INSTALL}}
@@ -37,5 +37,3 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-, root, root)
 {{FILES}}
-
-%changelog
