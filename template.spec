@@ -21,7 +21,7 @@ BuildArch: {{ARCH}}
 %prep
 rm -rf $RPM_BUILD_ROOT
 
-%autosetup
+%setup -n %{name}
 
 %install
 {{INSTALL}}
