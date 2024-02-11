@@ -27,8 +27,8 @@ readonly RPMBUILD_DIR="$HOME/rpmbuild"
 readonly RPMBUILD_SOURCE_DIR="$RPMBUILD_DIR/SOURCES"
 readonly RPMBUILD_SPEC_DIR="$RPMBUILD_DIR/SPECS"
 {
-  dnf install -y $INPUT_BUILD_REQUIRES
-  dnf install -y $INPUT_REQUIRES
+  [ "$INPUT_BUILD_REQUIRES" = '-' ] || dnf install -y $INPUT_BUILD_REQUIRES
+  [ "$INPUT_REQUIRES" = '-' ] || dnf install -y $INPUT_REQUIRES
   readonly WORKDIR="/tmp/work"
   mkdir "$WORKDIR"
   cp /template.spec "$WORKDIR"
