@@ -63,5 +63,5 @@ done
 
 set -e
 
-pwd
+
 echo "file_name=$RPM_FILE" >> "${GITHUB_OUTPUT}"

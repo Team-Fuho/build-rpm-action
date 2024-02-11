@@ -67,13 +67,13 @@ jobs:
           arch: 'x86_64'
           desc: 'test package'
       - run: |
-          pwd
-          ls /
-          ls /work
-          ls /tmp/
-          ls /tmp/work
-          ls ../..
-          find ../ -not -type d
+          pwd || :
+          ls / || :
+          ls /work || :
+          ls /tmp/ || :
+          ls /tmp/work || :
+          ls ../.. || :
+          find ../ -not -type d || :
           docker run --rm -v $PWD:/work -t team-fuho/tfh-rpm-action:latest bash -c 'rpm -Uvh /work/*.rpm && testbin'
 
   test-github-refs-version:
