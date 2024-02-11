@@ -38,7 +38,7 @@ jobs:
             This is sample package.
         id: build
       - run: |
-          docker run --rm -v $PWD:/work -t centos:7 bash -c 'rpm -Uvh /work/*.rpm && testbin'
+          docker run --rm -v $PWD:/work -t centos:8 bash -c 'rpm -Uvh /work/*.rpm && testbin'
       - name: Test file_name
         run: test ${{ steps.build.outputs.file_name }} = 'testbin-1.0.0-1.el7.x86_64.rpm'
       - name: Test debuginfo_file_name
@@ -55,7 +55,7 @@ jobs:
           echo -e "echo hello2" > .rpmpkg/usr/bin/testbin2
           echo -e "a=1" > .rpmpkg/usr/lib/testbin/testbin.conf
           chmod +x .rpmpkg/usr/bin/*
-      - uses: jiro4989/build-rpm-action@v2
+      - uses: Team-Fuho/tfh-rpm-action@v2.5.2
         with:
           summary: 'testbin is a test script'
           package: testbin
@@ -65,7 +65,7 @@ jobs:
           arch: 'x86_64'
           desc: 'test package'
       - run: |
-          docker run --rm -v $PWD:/work -t centos:7 bash -c 'rpm -Uvh /work/*.rpm && testbin'
+          docker run --rm -v $PWD:/work -t centos:8 bash -c 'rpm -Uvh /work/*.rpm && testbin'
 
   test-github-refs-version:
     runs-on: ubuntu-latest
@@ -91,4 +91,4 @@ jobs:
           # build_requires: 'perl-Git = 2.43.0'
           # requires: 'git-core = 2.43.0'
       - run: |
-          docker run --rm -v $PWD:/work -t centos:7 bash -c 'rpm -Uvh /work/*.rpm && testbin'
+          docker run --rm -v $PWD:/work -t centos:8 bash -c 'rpm -Uvh /work/*.rpm && testbin'
